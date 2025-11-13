@@ -1,4 +1,4 @@
-/* Genel body ve background */
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
@@ -10,21 +10,21 @@ body {
   text-align: center;
 }
 
-/* Degrade animasyonu */
+
 @keyframes gradientBG {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
 
-/* Başlık */
+
 h1 {
   margin: 20px 0 10px 0;
   font-size: 2rem;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
 }
 
-/* Top bar – Saat */
+
 .top-bar {
   font-size: 1.2rem;
   font-weight: bold;
@@ -36,7 +36,7 @@ h1 {
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-/* Arama çubuğu */
+
 .search-bar {
   margin-bottom: 20px;
 }
@@ -65,7 +65,7 @@ h1 {
   background: linear-gradient(90deg, #66bb6a, #81c784);
 }
 
-/* Tablo – Glassmorphism ve kompakt */
+
 table {
   width: 95%;
   margin: 0 auto 30px auto;
@@ -98,7 +98,7 @@ td img {
   height: 24px;
 }
 
-/* Pozitif / negatif renkler */
+
 td.positive {
   color: #4caf50;
   font-weight: bold;
@@ -109,13 +109,13 @@ td.negative {
   font-weight: bold;
 }
 
-/* Mini grafikleri küçült ve estetik */
+
 canvas {
   width: 90px !important;
   height: 35px !important;
 }
 
-/* Responsive ayarlar */
+
 @media screen and (max-width: 768px) {
   table, thead, tbody, th, td, tr { display: block; }
   th { display: none; }
