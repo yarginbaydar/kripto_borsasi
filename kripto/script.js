@@ -13,7 +13,7 @@ const clockEl = document.getElementById("clock");
 let priceHistory = {};
 let chartsPrice = {};
 
-// Saat göstergesi
+
 function updateClock(){
   const now = new Date();
   clockEl.textContent = now.toLocaleTimeString();
@@ -21,7 +21,7 @@ function updateClock(){
 setInterval(updateClock, 1000);
 updateClock();
 
-// Tablo satırları ve chart oluştur
+
 stocks.forEach(symbol => createRow(symbol));
 
 addStockBtn.addEventListener("click", ()=>{
@@ -105,7 +105,7 @@ function createRow(symbol){
   const tr = document.createElement("tr");
   tr.id=`row-${symbol}`;
 
-  // Logo + sembol
+  
   const tdSymbol = document.createElement("td"); 
   const img = document.createElement("img");
   img.src = getLogoURL(symbol); img.alt=symbol; img.width=24; img.height=24;
@@ -113,13 +113,13 @@ function createRow(symbol){
   tdSymbol.appendChild(document.createTextNode(symbol.replace("BINANCE:","")));
   tr.appendChild(tdSymbol);
 
-  // Fiyat
+  
   const tdPrice = document.createElement("td"); tdPrice.id=`price-${symbol}`; tr.appendChild(tdPrice);
-  // Değişim
+  
   const tdChange = document.createElement("td"); tdChange.id=`change-${symbol}`; tr.appendChild(tdChange);
-  // Yüzde
+  
   const tdPercent = document.createElement("td"); tdPercent.id=`percent-${symbol}`; tr.appendChild(tdPercent);
-  // Grafik
+  
   const tdChart = document.createElement("td"); 
   const canvasPrice = document.createElement("canvas"); 
   canvasPrice.id=`chart-${symbol}`; canvasPrice.width=100; canvasPrice.height=40;
@@ -127,7 +127,7 @@ function createRow(symbol){
 
   stockTableBody.appendChild(tr);
 
-  // Chart objesi
+  
   chartsPrice[symbol]=new Chart(canvasPrice.getContext("2d"),{
     type:"line",
     data:{ labels:[], datasets:[{data:[], borderColor:'#4caf50', borderWidth:2, fill:false, tension:0.3}]},
@@ -135,7 +135,7 @@ function createRow(symbol){
   });
 }
 
-// Verileri çek ve tabloyu güncelle
+
 async function fetchStockData(){
   for(const symbol of stocks){
     try{
@@ -160,7 +160,7 @@ async function fetchStockData(){
       percentEl.textContent = data.dp ? parseFloat(data.dp).toFixed(2)+"%" : "-";
       percentEl.className = (data.dp>=0)?"positive":"negative";
 
-      // Fiyat grafiği
+      
       chartsPrice[symbol].data.labels = priceHistory[symbol].map((_,i)=>i+1);
       chartsPrice[symbol].data.datasets[0].data = priceHistory[symbol];
       chartsPrice[symbol].data.datasets[0].borderColor = (data.d>=0)?'#4caf50':'#f44336';
