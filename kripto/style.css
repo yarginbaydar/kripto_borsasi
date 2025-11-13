@@ -1,0 +1,125 @@
+/* Genel body ve background */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: white;
+  text-align: center;
+}
+
+/* Degrade animasyonu */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Başlık */
+h1 {
+  margin: 20px 0 10px 0;
+  font-size: 2rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+/* Top bar – Saat */
+.top-bar {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  padding: 8px 16px;
+  display: inline-block;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.3);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Arama çubuğu */
+.search-bar {
+  margin-bottom: 20px;
+}
+
+#stockInput {
+  padding: 8px 14px;
+  font-size: 16px;
+  width: 220px;
+  border-radius: 8px;
+  border: none;
+}
+
+#addStock {
+  padding: 8px 14px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #4caf50, #66bb6a);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#addStock:hover {
+  transform: scale(1.05);
+  background: linear-gradient(90deg, #66bb6a, #81c784);
+}
+
+/* Tablo – Glassmorphism ve kompakt */
+table {
+  width: 95%;
+  margin: 0 auto 30px auto;
+  border-collapse: collapse;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+th, td {
+  padding: 10px 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  vertical-align: middle;
+  text-align: center;
+}
+
+th {
+  background: rgba(255,255,255,0.15);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+td img {
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 6px;
+  width: 24px;
+  height: 24px;
+}
+
+/* Pozitif / negatif renkler */
+td.positive {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+td.negative {
+  color: #f44336;
+  font-weight: bold;
+}
+
+/* Mini grafikleri küçült ve estetik */
+canvas {
+  width: 90px !important;
+  height: 35px !important;
+}
+
+/* Responsive ayarlar */
+@media screen and (max-width: 768px) {
+  table, thead, tbody, th, td, tr { display: block; }
+  th { display: none; }
+  td { display: flex; justify-content: space-between; padding: 8px 12px; }
+  td::before { content: attr(data-label); font-weight: bold; margin-right: 6px; }
+  canvas { width: 80px !important; height: 30px !important; }
+}

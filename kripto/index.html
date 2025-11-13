@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kripto & Hisse Takip Paneli</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+<h1>Kripto & Hisse Takip Paneli</h1>
+
+<div class="top-bar">
+  <div id="clock">--:--:--</div>
+</div>
+
+<div class="search-bar">
+  <input type="text" id="stockInput" placeholder="Sembol ekle (örn: BINANCE:BTCUSDT)">
+  <button id="addStock">Ekle</button>
+</div>
+
+<table id="stockTable">
+  <thead>
+    <tr>
+      <th>Sembol</th>
+      <th>Güncel Fiyat</th>
+      <th>Değişim</th>
+      <th>Yüzde</th>
+      <th>Grafik</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Veriler buraya gelecek -->
+  </tbody>
+</table>
+
+<script src="script.js"></script>
+</body>
+</html>
